@@ -5,7 +5,7 @@ import chromadb
 # Initialize ChromaDB client and create a collection
 chroma_client = chromadb.PersistentClient(path="/gcs")
 
-collection = chroma_client.create_collection(name="my_collection")
+collection = client.get_or_create_collection(name="my_collection")
 
 app = FastAPI()
 
