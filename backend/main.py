@@ -3,7 +3,8 @@ from pydantic import BaseModel
 import chromadb
 
 # Initialize ChromaDB client and create a collection
-chroma_client = chromadb.Client()
+chroma_client = chromadb.PersistentClient(path="/gcs")
+
 collection = chroma_client.create_collection(name="my_collection")
 
 app = FastAPI()
